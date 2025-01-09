@@ -51,53 +51,46 @@ class SearchActivity : AppCompatActivity() {
 
         var edit = binding.number.editableText
 
-        val queue : RequestQueue = Volley.newRequestQueue(this)
         val dbHelper = DatabaseHelper(this)
 
         // 데이터베이스 초기화
         dbHelper.resetDatabase()
 
-        val url = "http://192.168.0.2:5000/get_data"
 
+        // Retrofit 설정
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://192.168.0.2:5000/")  // Flask 서버의 URL
+            .addConverterFactory(GsonConverterFactory.create())  // Gson Converter 사용
+            .build()
 
+        val service = retrofit.create(RetrofitService::class.java)
 
+        // API 요청
+        service.getParkingData().enqueue(object : Callback<ParkingData> {
+            override fun onResponse(call: Call<ParkingData>, response: Response<ParkingData>) {
+                if (response.isSuccessful) {
+                    val parkingData = response.body()
+                    Log.d("SearchActivity", "Response Success: $parkingData")
 
+                    // 받은 데이터를 데이터베이스에 저장
+                    parkingData?.let {
+                        dbHelper.insertLog(it.carNum, it.spotid, it.eventTime)
+                    }
+                } else {
+                    Log.d("SearchActivity", "Response Failure: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<ParkingData>, t: Throwable) {
+                Log.d("SearchActivity", "Failure: ${t.message}")
+            }
+        })
 
         // 차량 번호가 맞을 경우 MyCarActivity로 이동
         binding.btn.setOnClickListener {
 
             val editText = binding.number.editableText.toString()
 
-
-
-            // Retrofit 설정
-            val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.0.2:5000/")  // Flask 서버의 URL
-                .addConverterFactory(GsonConverterFactory.create())  // Gson Converter 사용
-                .build()
-
-            val service = retrofit.create(RetrofitService::class.java)
-
-            // API 요청
-            service.getParkingData().enqueue(object : Callback<ParkingData> {
-                override fun onResponse(call: Call<ParkingData>, response: Response<ParkingData>) {
-                    if (response.isSuccessful) {
-                        val parkingData = response.body()
-                        Log.d("SearchActivity", "Response Success: $parkingData")
-
-                        // 받은 데이터를 데이터베이스에 저장
-                        parkingData?.let {
-                            dbHelper.insertLog(it.carNum, it.spotid, it.eventTime)
-                        }
-                    } else {
-                        Log.d("SearchActivity", "Response Failure: ${response.code()}")
-                    }
-                }
-
-                override fun onFailure(call: Call<ParkingData>, t: Throwable) {
-                    Log.d("SearchActivity", "Failure: ${t.message}")
-                }
-            })
 
             // 차량 번호로 주차 여부 확인
             if (dbHelper.isCarParked(editText)) {
@@ -113,16 +106,6 @@ class SearchActivity : AppCompatActivity() {
                 Toast.makeText(this, "차량이 주차되어 있지 않습니다.", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
-/*
-        binding.timeschk.setOnClickListener {
-            binding.time.text = getTime()
-        }
-*/
-
-
 
 
     }
