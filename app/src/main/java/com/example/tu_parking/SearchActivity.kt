@@ -59,7 +59,7 @@ class SearchActivity : AppCompatActivity() {
 
         // Retrofit 설정
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.2:5000/")  // Flask 서버의 URL
+            .baseUrl("http://192.168.0.27:5000/")  // Flask 서버의 URL
             .addConverterFactory(GsonConverterFactory.create())  // Gson Converter 사용
             .build()
 
@@ -105,6 +105,10 @@ class SearchActivity : AppCompatActivity() {
                 // 차량이 주차되지 않은 경우
                 Toast.makeText(this, "차량이 주차되어 있지 않습니다.", Toast.LENGTH_SHORT).show()
             }
+        }
+        binding.btn2.setOnClickListener{
+            var intent = Intent(this, ParkingZone::class.java)
+            startActivity(intent)
         }
 
 

@@ -92,6 +92,7 @@
             <TableRow>
 
                 <LinearLayout
+                    android:id="@+id/parking_spot1"
                     android:layout_width="80dp"
                     android:layout_height="140dp"
                     android:background="#000000"
@@ -108,12 +109,13 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:text="차번호" />
+                            android:text="" />
                     </LinearLayout>
-
-
                 </LinearLayout>
+
+
                 <LinearLayout
+                    android:id="@+id/parking_spot2"
                     android:layout_width="80dp"
                     android:layout_height="140dp"
                     android:background="#000000"
@@ -125,32 +127,32 @@
                         android:layout_margin="10dp"
                         android:background="#ffff">
                         <TextView
-                            android:id="@+id/parkingnum2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:text="차번호" />
+                            android:text="" />
                     </LinearLayout>
                 </LinearLayout>
+
+
                 <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="140dp"
-                android:background="#000000"
-                android:text="1">
+                    android:id="@+id/parking_spot3"
+                    android:layout_width="80dp"
+                    android:layout_height="140dp"
+                    android:background="#000000"
+                    android:text="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:background="#ffff">
-
                         <TextView
-                            android:id="@+id/parkingnum3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:text="차번호" />
+                            android:text="" />
                     </LinearLayout>
             </LinearLayout>
             </TableRow>

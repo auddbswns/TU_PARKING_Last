@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParkingZone"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/Cbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back_btn"
+        android:layout_margin="10dp"
+        >
+
+    </ImageView>
+    <Spinner
+        android:layout_marginTop="-40dp"
+        android:layout_gravity="center"
+        android:id="@+id/spin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:id="@+id/parking1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/jare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남은자리"/>
+
+        <TableRow>
+
+            <LinearLayout
+                android:id="@+id/parking_spot1"
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/parkingnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1"
+                android:layout_marginHorizontal="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+                    <TextView
+                        android:id="@+id/parkingnum2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+
+                    <TextView
+                        android:id="@+id/parkingnum3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/parking2"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="30dp">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남은자리"/>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1"
+                android:layout_marginHorizontal="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:layout_gravity="center"
+        android:id="@+id/parking3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="30dp">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남은자리"/>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1"
+                android:layout_marginHorizontal="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:background="#4CFF00"
+                android:text="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#ffff">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="차번호" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
